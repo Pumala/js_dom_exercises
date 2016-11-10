@@ -29,7 +29,7 @@
 
       addBtn.addEventListener("click", function() {
 
-        var text = input.value;
+        var html = input.value;
         var removeText = 'Remove';
 
         // create the li
@@ -37,14 +37,10 @@
         // create the button
         var removeBtn = document.createElement('button');
 
-        var html = text;
-
-
         removeBtn.textContent = removeText;
-        console.log(removeBtn);
-        newLi.textContent = html + '<button>Remove</button>';
-        console.log(newLi);
+        newLi.innerHTML = html + ' <button>Remove</button>';
         task.appendChild(newLi);
+        input.value = "";
       });
 
     });
